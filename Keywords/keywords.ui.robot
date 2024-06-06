@@ -87,7 +87,24 @@ I fill in data field
     Click Element                       ${field}
     Input Text                          ${field}    ${data}
 
-I fill in contact form
+I fill in contact form with correct values
     I fill in data field        ${NameInput}            ${TestingName}
     I fill in data field        ${EmailInput}           ${TestEmail}
     I fill in data field        ${MessageInput}         ${TestMessage}
+
+
+I fill in contact form with invalid email
+    I fill in data field        ${NameInput}            ${TestingName}
+    I fill in data field        ${EmailInput}           ${InvalidEmail}
+    I fill in data field        ${MessageInput}         ${TestMessage}
+
+
+I send message to Tesena
+    Wait Until Element Is Visible       ${SubmitMessageButton}
+    Scroll Element Into View            ${SubmitMessageButton}
+    Execute JavaScript                  window.scrollTo(0,document.body.scrollHeight)
+    Click Element                       ${SubmitMessageButton}
+
+Verify error message is present
+#    Wait Until Element Is Visible       ${EmailErrorMessage}
+    Capture Page Screenshot

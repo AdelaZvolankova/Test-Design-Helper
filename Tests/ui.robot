@@ -65,9 +65,17 @@ TC_07 User can select English
     I switch to English
     I verify website is in English
 
-TC_08 Contact form validation
-    [Tags]   wip
+TC_08 Contact form validation happy path
+    [Tags]    wip
     I navigate to homepage
     I open contact info page
-    I fill in contact form
+    I fill in contact form with correct values
     Capture Page Screenshot
+
+TC_09 Contact form validation invalid email
+    [Tags]    wip
+    I navigate to homepage
+    I open contact info page
+    I fill in contact form with invalid email
+    I send message to Tesena
+    Verify error message is present

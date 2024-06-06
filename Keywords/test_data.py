@@ -8,3 +8,4 @@ ClassificationTreeHeadline = "Classification Tree"
 TestingName = 'John Doe'
 TestEmail = 'john@doe.com'
 TestMessage = 'This is my question.'
+InvalidEmail = 'abc123'

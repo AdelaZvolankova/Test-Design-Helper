@@ -37,3 +37,5 @@ ${WelcomeInEnglish}                 //p[contains(text(),'Welcome to the world of
 ${EmailInput}                       //input[@id='email']
 ${NameInput}                        //input[@id='user']
 ${MessageInput}                     //textarea[@id='message']
+${SubmitMessageButton}              //form[@id='contact-form']/button[@id='submit']
+${EmailErrorMessage}                //div[@id='email-error']
