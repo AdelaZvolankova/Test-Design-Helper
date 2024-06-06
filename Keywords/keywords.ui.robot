@@ -80,3 +80,14 @@ I verify website is in English
     Page Should Contain Element        ${WelcomeInEnglish}
     Capture Page Screenshot
 
+
+I fill in data field
+    [Arguments]          ${field}       ${data}
+    Wait Until Page Contains Element    ${field}
+    Click Element                       ${field}
+    Input Text                          ${field}    ${data}
+
+I fill in contact form
+    I fill in data field        ${NameInput}            ${TestingName}
+    I fill in data field        ${EmailInput}           ${TestEmail}
+    I fill in data field        ${MessageInput}         ${TestMessage}

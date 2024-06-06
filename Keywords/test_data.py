@@ -5,3 +5,6 @@ Pairwise = "Pairwise"
 DecisionTable = "Decision Table"
 DalsiTechniky = "Další techniky"
 ClassificationTreeHeadline = "Classification Tree"
+TestingName = 'John Doe'
+TestEmail = 'john@doe.com'
+TestMessage = 'This is my question.'

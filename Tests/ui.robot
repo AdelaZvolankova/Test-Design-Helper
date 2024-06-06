@@ -65,4 +65,9 @@ TC_07 User can select English
     I switch to English
     I verify website is in English
 
-
+TC_08 Contact form validation
+    [Tags]   wip
+    I navigate to homepage
+    I open contact info page
+    I fill in contact form
+    Capture Page Screenshot
