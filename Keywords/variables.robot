@@ -1,7 +1,3 @@
-*** Settings ***
-
-Variables        test_data.py
-
 *** Variables ***
 
 ${header}                           //*[@id="header-index"]
@@ -39,3 +35,16 @@ ${NameInput}                        //input[@id='user']
 ${MessageInput}                     //textarea[@id='message']
 ${SubmitMessageButton}              //form[@id='contact-form']/button[@id='submit']
 ${EmailErrorMessage}                //div[@id='email-error']
+${ChciVedetVic}                     //div[contains(text(),'CHCI VĚDĚT VÍC')]
+${MainPageHeadline}                 Testing 360°
+${ContactHeadline}                  Spojte se s námi
+${OrthogonalCoveringArrays}         Orthogonal Arrays
+${Pairwise}                         Pairwise
+${DecisionTable}                    Decision Table
+${DalsiTechniky}                    Další techniky
+${ClassificationTreeHeadline}       Classification Tree
+${TestingName}                      John Doe
+${TestEmail}                        john@doe.com
+${TestMessage}                      This is my question.
+${InvalidEmail}                     abc123
+${LinkToTrainings}                  //a[@href="https://www.tesena.com/test-design-techniky"]
