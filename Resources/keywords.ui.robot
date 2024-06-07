@@ -1,12 +1,13 @@
 *** Settings ***
-Resource         ../keywords/variables.robot
+Resource         ./variables.robot
+Resource  ../Configs/config.resource
 Library        SeleniumLibrary
 
 *** Keywords ***
 
 I open Browser
     [Documentation]
-    SeleniumLibrary.Open Browser    ${root_url}    browser=chrome
+    SeleniumLibrary.Open Browser    ${root_url}[${environment}]    browser=chrome
     Maximize Browser Window
 
 I navigate to homepage
