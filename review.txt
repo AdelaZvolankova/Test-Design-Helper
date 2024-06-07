@@ -1,0 +1,8 @@
+Zápis s "I"?
+Co je to Page Object Model?
+Zkusit se podívat na Browser Library
+prefix SeleniumLibrary.
+Config root_url zapsat jako Dictionary
+test_data v keywords
+Struktura: Tests - Resources - Data - Configs
+Zlepšit pořadí importů

@@ -1,7 +1,7 @@
 *** Settings ***
 
-Resource         ../keywords/keywords.ui.robot
-Resource         ../keywords/variables.robot
+Resource  ../Resources/keywords.ui.robot
+Resource  ../Configs/config.resource
 Library        OperatingSystem
 Library        Collections
 Library        SeleniumLibrary
@@ -9,12 +9,13 @@ Library        String
 Library        RequestsLibrary
 
 
+
 Test Setup        I open Browser
 Test Teardown     Close All Browsers
 Test Timeout      120s
 
 *** Variables ***
-${root_url}         https://testdesign.tesena.com
+${environment}  test
 
 
 *** Test Cases ***
