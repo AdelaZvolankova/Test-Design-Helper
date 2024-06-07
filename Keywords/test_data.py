@@ -1,7 +1,0 @@
-MainPageHeadline = "Testing 360°"
-ContactHeadline = "Spojte se s námi"
-OrthogonalCoveringArrays = "Orthogonal Arrays"
-Pairwise = "Pairwise"
-DecisionTable = "Decision Table"
-DalsiTechniky = "Další techniky"
-ClassificationTreeHeadline = "Classification Tree"

@@ -1,7 +1,3 @@
-*** Settings ***
-
-Variables        test_data.py
-
 *** Variables ***
 
 ${header}                           //*[@id="header-index"]
@@ -34,3 +30,21 @@ ${EVPExample}                       //p[contains(text(),'Pro testování data')]
 ${SwitchToEnglish}                  //a[contains(text(),'EN')]
 ${SwitchToCzech}                    //a[contains(text(),'CS')]
 ${WelcomeInEnglish}                 //p[contains(text(),'Welcome to the world of effective Test Analysis!')]
+${EmailInput}                       //input[@id='email']
+${NameInput}                        //input[@id='user']
+${MessageInput}                     //textarea[@id='message']
+${SubmitMessageButton}              //form[@id='contact-form']/button[@id='submit']
+${EmailErrorMessage}                //div[@id='email-error']
+${ChciVedetVic}                     //div[contains(text(),'CHCI VĚDĚT VÍC')]
+${MainPageHeadline}                 Testing 360°
+${ContactHeadline}                  Spojte se s námi
+${OrthogonalCoveringArrays}         Orthogonal Arrays
+${Pairwise}                         Pairwise
+${DecisionTable}                    Decision Table
+${DalsiTechniky}                    Další techniky
+${ClassificationTreeHeadline}       Classification Tree
+${TestingName}                      John Doe
+${TestEmail}                        john@doe.com
+${TestMessage}                      This is my question.
+${InvalidEmail}                     abc123
+${LinkToTrainings}                  //a[@href="https://www.tesena.com/test-design-techniky"]
