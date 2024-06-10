@@ -64,7 +64,7 @@ ${CloseYTCookies}                   (//span[contains(text(),'Odmítnout')])[1]/p
 ${CloseFBRegistration}              //div[@aria-label='Zavřít']
 ${CloseLinkedINRegistration}        //button[contains(@class,'modal-dismiss')]
 ${ShowMoreInfo}                     //span[@class='show-more-btn']
-${ShowLessInfo}                     //span[@class='show-more-btn']
+${ShowLessInfo}                     //span[contains(text(),'Méně')]
 ${EnglishUrl}                       https://testdesign.tesena.com/en
 ${AcceptCookies}                    //a[contains(text(),'Accept')]
 
