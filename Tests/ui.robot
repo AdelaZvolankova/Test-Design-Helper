@@ -93,24 +93,32 @@ TC_08 User can select English
 
 TC_09 Contact form validation happy path
     [Documentation]  Verifies that the user can fill out the contact form with correct values and the page screenshot is captured.
-    [Tags]  Regression
+    [Tags]  Regression      wip
     I navigate to homepage
     I open contact info page
-    I fill in contact form with correct values
+    I fill in contact form      ${TestingName}     ${TestEmail}     ${TestMessage}
     Capture Page Screenshot
 
 
 TC_10 Contact form validation invalid email
     [Documentation]    Verifies that the user can fill out the contact form with an invalid email and the expected error message is displayed.
-    [Tags]  Regression
+    [Tags]  Regression          wip
     I navigate to homepage
     I open contact info page
-    I fill in contact form with invalid email
+    I fill in contact form      ${TestingName}      ${InvalidEmail}     ${TestMessage}
     I send message to Tesena
     Verify error message is present
 
+TC_11 Contact form validation empty message
+    [Documentation]    Verifies that the user can fill out the contact form with an invalid email and the expected error message is displayed.
+    [Tags]  Regression          wip
+    I navigate to homepage
+    I open contact info page
+    I fill in contact form        ${TestingName}      ${TestEmail}     ${EmptyMessage}
+    I send message to Tesena
+    Verify error message is present
 
-TC_11 Social media links are working - FB
+TC_12 Social media links are working - FB
     [Documentation]   Verifies that the user can open Tesena Facebook and see the expected content.
     [Tags]  Regression
     I navigate to homepage
@@ -119,7 +127,7 @@ TC_11 Social media links are working - FB
     Capture Page Screenshot
 
 
-TC_12 Social media links are working - YOUTUBE
+TC_13 Social media links are working - YOUTUBE
     [Documentation]    Verifies that the user can open Tesena Yoututbe and see the expected content.
     [Tags]  Regression
     I navigate to homepage
@@ -127,7 +135,7 @@ TC_12 Social media links are working - YOUTUBE
     Capture Page Screenshot
 
 
-TC_13 Social media links are working - LinkedIn
+TC_14 Social media links are working - LinkedIn
     [Documentation]    Verifies that the user can open Tesena LinkedIn and see the expected content.
     [Tags]  Regression
     I navigate to homepage
@@ -135,13 +143,15 @@ TC_13 Social media links are working - LinkedIn
     Capture Page Screenshot
 
 
-TC_14 External links are working - Testona
+TC_15 External links are working - Testona
     [Documentation]    Verifies that the user can navigate to the external Testona homepage.
     [Tags]  Regression
     I navigate to external homepage     ${TestonaUrl}
+    Capture Page Screenshot
 
 
-TC_15 External links are working - DrawIO
+TC_16 External links are working - DrawIO
     [Documentation]  Verifies that the user can navigate to the external DrawIO homepage.
     [Tags]  Regression
     I navigate to external homepage     ${DrawIOUrl}
+    Capture Page Screenshot

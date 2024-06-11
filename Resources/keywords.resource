@@ -132,17 +132,13 @@ I fill in data field
     Click Element                       ${field}
     Input Text                          ${field}    ${data}
 
-I fill in contact form with correct values
+I fill in contact form
     [Documentation]
-    I fill in data field        ${NameInput}            ${TestingName}
-    I fill in data field        ${EmailInput}           ${TestEmail}
-    I fill in data field        ${MessageInput}         ${TestMessage}
+    [Arguments]      ${Name}    ${Email}    ${Message}
+    I fill in data field        ${NameInput}            ${Name}
+    I fill in data field        ${EmailInput}           ${Email}
+    I fill in data field        ${MessageInput}         ${Message}
 
-I fill in contact form with invalid email
-    [Documentation]
-    I fill in data field        ${NameInput}            ${TestingName}
-    I fill in data field        ${EmailInput}           ${InvalidEmail}
-    I fill in data field        ${MessageInput}         ${TestMessage}
 
 I send message to Tesena
     [Documentation]

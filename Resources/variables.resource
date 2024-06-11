@@ -67,6 +67,7 @@ ${ShowMoreInfo}                     //span[@class='show-more-btn']
 ${ShowLessInfo}                     //span[contains(text(),'Méně')]
 ${EnglishUrl}                       https://testdesign.tesena.com/en
 ${AcceptCookies}                    //a[contains(text(),'Accept')]
+${EmptyMessage}
 
 
 
