@@ -72,4 +72,5 @@ ${OrthogonalCoveringArrays}         Orthogonal Arrays
 ${Pairwise}                         Pairwise
 ${DecisionTable}                    Decision Table
 ${DalsiTechniky}                    Další techniky
+
 ${ClassificationTreeHeadline}       Classification Tree

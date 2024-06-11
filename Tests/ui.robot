@@ -160,3 +160,9 @@ TC_16 External links are working - DrawIO
     [Tags]  Regression
     I navigate to external homepage     ${DrawIOUrl}
     Capture Page Screenshot
+
+
+TC_17 Page transitions are working
+    [Documentation]     Verifies that page transitions between main suboages don't break the application.
+    [Tags]  Regression    wip
+    I perform page transitions

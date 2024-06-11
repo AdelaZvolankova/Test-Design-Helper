@@ -5,6 +5,8 @@ Library        SeleniumLibrary
 Library        String
 Library        RequestsLibrary
 Library        Browser
+Resource       ./PO_Homepage.resource
+Resource       ./PO_TechniquesSubpages.resource
 
 
 *** Keywords ***
@@ -40,18 +42,40 @@ I go to more information page
     Click Element    ${ChciVedetVic}
     Wait Until Location Is              ${MoreInfoUrl}
 
+
+I go to introduction
+    [Documentation]
+    Wait Until Page Contains Element    ${Uvod}
+    Click Element    ${Uvod}
+    Wait Until Element Is Visible    ${ChciVedetVic}
+
+
+I perform page transitions
+    I navigate to homepage
+    I open test design tool tab         ${OrthogonalCoveringArraysTab}
+    I verify headline is present        ${SubpageHeadlineLevel}         ${OrthogonalCoveringArrays}
+    I open test design tool tab         ${PairwiseTab}
+    I verify headline is present        ${SubpageHeadlineLevel}         ${Pairwise}
+    I open test design tool tab         ${DecisionTableTab}
+    I verify headline is present        ${SubpageHeadlineLevel}         ${DecisionTable}
+    I open test design tool tab         ${OtherTechniquesTab}
+    I verify headline is present        ${SubpageHeadlineLevel}         ${DalsiTechniky}
+    I go to introduction
+
+
+
+
 *** Variables ***
 
 ${SwitchToEnglish}                  //a[contains(text(),'EN')]
 ${SwitchToCzech}                    //a[contains(text(),'CS')]
 ${ContactUsButton}                  //div[contains(text(),'Kontaktujte nás')]
+${Uvod}                             //a[contains(text(),'Úvod')]
 ${OrthogonalCoveringArraysTab}      //a[contains(text(),'Orthogonal & Covering Arrays')]
 ${PairwiseTab}                      //a[contains(text(),'Pairwise')]
 ${DecisionTableTab}                 //a[contains(text(),'Decision Table')]
 ${OtherTechniquesTab}               //a[contains(text(),'Další techniky')]
 ${ChciVedetVic}                     //div[contains(text(),'CHCI VĚDĚT VÍC')]
 ${MoreInfoUrl}                      https://testdesign.tesena.com/#guide-index
-
-
 
 
