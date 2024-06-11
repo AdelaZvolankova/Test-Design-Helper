@@ -1,6 +1,11 @@
 *** Settings ***
 
-Resource      ../Resources/keywords.resource
+Resource      ../Resources/PO_ContactForm.resource
+Resource      ../Resources/PO_ExternalSites.resource
+Resource      ../Resources/PO_Homepage.resource
+Resource      ../Resources/PO_TechniquesSubpages.resource
+Resource      ../Resources/PO_HeaderObjects.resource
+Resource      ../Resources/PO_MoreInfo.resource
 Resource      ../Configs/config.resource
 
 Test Setup        I open Browser
@@ -93,7 +98,7 @@ TC_08 User can select English
 
 TC_09 Contact form validation happy path
     [Documentation]  Verifies that the user can fill out the contact form with correct values and the page screenshot is captured.
-    [Tags]  Regression      wip
+    [Tags]  Regression
     I navigate to homepage
     I open contact info page
     I fill in contact form      ${TestingName}     ${TestEmail}     ${TestMessage}
@@ -102,7 +107,7 @@ TC_09 Contact form validation happy path
 
 TC_10 Contact form validation invalid email
     [Documentation]    Verifies that the user can fill out the contact form with an invalid email and the expected error message is displayed.
-    [Tags]  Regression          wip
+    [Tags]  Regression
     I navigate to homepage
     I open contact info page
     I fill in contact form      ${TestingName}      ${InvalidEmail}     ${TestMessage}
@@ -111,7 +116,7 @@ TC_10 Contact form validation invalid email
 
 TC_11 Contact form validation empty message
     [Documentation]    Verifies that the user can fill out the contact form with an invalid email and the expected error message is displayed.
-    [Tags]  Regression          wip
+    [Tags]  Regression
     I navigate to homepage
     I open contact info page
     I fill in contact form        ${TestingName}      ${TestEmail}     ${EmptyMessage}
