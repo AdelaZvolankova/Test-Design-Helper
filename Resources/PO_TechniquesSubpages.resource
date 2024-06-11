@@ -11,13 +11,13 @@ Resource       ./PO_ExternalSites.resource
 *** Keywords ***
 
 I verify headline is present
-    [Documentation]
+    [Documentation]    Verifies the headline is present on the page.
     [Arguments]     ${HeadlineLevel}        ${ExpectedHeadline}
     Wait until page contains element        ${HeadlineLevel}
     Element Should Contain    ${HeadlineLevel}       ${ExpectedHeadline}
 
 I Expand Other Techniques
-    [Documentation]
+    [Documentation]    Expands a single testing technique displaying additional information.
     [Arguments]       ${TechniqueName}      ${element1}      ${element2}
     Wait Until Page Contains Element        ${TechniqueName}
     Scroll Element Into View                ${TechniqueName}
@@ -34,23 +34,23 @@ I Expand Other Techniques
     Click Button                            ${TechniqueName}
 
 I Expand Classification Tree
-    [Documentation]
+    [Documentation]    Expands the classification tree.
     I Expand Other Techniques       ${ClassificationTree}        ${Testona}     ${DrawIO1}
 
 I Expand State Transition
-    [Documentation]
+    [Documentation]    Expands the state transition.
     I Expand Other Techniques       ${StateTransition}        ${Creatly}     ${DrawIO2}
 
 I Expand Boundry Value Analysis
-    [Documentation]
+    [Documentation]    Expands the Boundry Value Analysis.
     I Expand Other Techniques       ${BVA}        ${BVAExplained}     ${BVAExample}
 
 I Expand Equivalence Partitioning
-    [Documentation]
+    [Documentation]    Expands the Equivalence Partitioning.
     I Expand Other Techniques       ${EVP}        ${EVPExplained}     ${EVPExample}
 
 I verify more info is expandable
-    [Documentation]
+    [Documentation]    Expands the more info section.
     Wait Until Page Contains Element    ${ShowMoreInfo}
     Click Element                       ${ShowMoreInfo}
     Capture Page Screenshot

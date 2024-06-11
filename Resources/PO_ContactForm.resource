@@ -5,21 +5,17 @@ Library        SeleniumLibrary
 Library        String
 Library        RequestsLibrary
 Library        Browser
-Resource       ./variables.resource
-
 
 *** Keywords ***
 
-
-
 I verify contact form is present
-    [Documentation]
+    [Documentation]     Test verifies contact form is present
     Wait Until Page Contains Element        ${ContactForm}
     Capture Page Screenshot
 
 
 I fill in data field
-    [Documentation]
+    [Documentation]    Fills in the specified data field on the page.
     [Arguments]          ${field}       ${data}
     Wait Until Page Contains Element    ${field}
     Click Element                       ${field}
@@ -27,7 +23,7 @@ I fill in data field
 
 
 I fill in contact form
-    [Documentation]
+    [Documentation]   Fills in the contact form with the provided name, email, and message.
     [Arguments]      ${Name}    ${Email}    ${Message}
     I fill in data field        ${NameInput}            ${Name}
     I fill in data field        ${EmailInput}           ${Email}
@@ -35,7 +31,7 @@ I fill in contact form
 
 
 I send message to Tesena
-    [Documentation]
+    [Documentation]    Clicks submit to send the message to Tesena.
     Wait Until Element Is Visible       ${SubmitMessageButton}
     Scroll Element Into View            ${SubmitMessageButton}
     Execute JavaScript                  window.scrollTo(0,document.body.scrollHeight)
@@ -43,7 +39,7 @@ I send message to Tesena
 
 
 Verify error message is present
-    [Documentation]
+    [Documentation]     Test verifies that the email error message is present on the page.
 #    Wait Until Element Is Visible       ${EmailErrorMessage}
     Capture Page Screenshot
 

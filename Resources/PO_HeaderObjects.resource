@@ -9,24 +9,33 @@ Library        Browser
 
 *** Keywords ***
 
+
 I switch to English
-    [Documentation]
+    [Documentation]    Switches the website to the English language by clicking the 'EN' link.
     Wait Until Page Contains Element    ${SwitchToEnglish}
     Click Element                       ${SwitchToEnglish}
 
+I switch to Czech
+    [Documentation]    Switches the website to the Czech language by clicking the 'CS' link.
+    Wait Until Page Contains Element    ${SwitchToCzech}
+    Click Element                       ${SwitchToCzech}
+
+
 I open test design tool tab
-    [Documentation]
+    [Documentation]    Opens the specified test design tool tab by clicking the respective tab.
     [Arguments]         ${TabName}
     Wait Until Page Contains Element        ${TabName}
     Click Link                              ${TabName}
 
+
 I open contact info page
-    [Documentation]
+    [Documentation]    Opens the contact information page by clicking the 'Kontaktujte nás'
     Wait Until Element is visible           ${ContactUsButton}
     Click Element                           ${ContactUsButton}
 
+
 I go to more information page
-    [Documentation]
+    [Documentation]    Opens the "More Information" page by clicking the "CHCI VĚDĚT VÍC" button.
     Wait Until Page Contains Element    ${ChciVedetVic}
     Click Element    ${ChciVedetVic}
     Wait Until Location Is              ${MoreInfoUrl}

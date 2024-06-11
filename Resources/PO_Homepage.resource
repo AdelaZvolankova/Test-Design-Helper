@@ -5,7 +5,6 @@ Library        SeleniumLibrary
 Library        String
 Library        RequestsLibrary
 Library        Browser
-Resource       ./variables.resource
 
 
 *** Keywords ***
@@ -25,27 +24,27 @@ I see header
     Wait until page contains element       ${header}
 
 I see Tesena logo
-    [Documentation]
+    [Documentation]    Verifies that the Tesena logo is present on the page.
     Wait until page contains element       ${Tesena_logo}
 
 I see footer
-    [Documentation]
+    [Documentation]    Verifies that the footer is present on the page.
     Wait until page contains element       ${footer}
 
 I see social media links
-    [Documentation]
+    [Documentation]    Verifies that the social media links are present on the page.
     Wait until page contains element       ${FBlink}
     Wait until page contains element       ${INSTAlink}
     Wait until page contains element       ${YTlink}
     Wait until page contains element       ${LinkedINlink}
 
 I verify website is in English
-    [Documentation]
+    [Documentation]   Verifies that the specified English text is present on the page.
     Page Should Contain Element        ${WelcomeInEnglish}
     Capture Page Screenshot
 
 I verify English Url is correct
-    [Documentation]
+    [Documentation]    Verifies that the English URL is correct.
     Wait Until Location Is              ${EnglishUrl}
 
 
