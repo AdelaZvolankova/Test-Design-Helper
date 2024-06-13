@@ -1,4 +1,5 @@
 *** Settings ***
+
 Library        OperatingSystem
 Library        Collections
 Library        SeleniumLibrary
@@ -42,15 +43,16 @@ I go to more information page
     Click Element    ${ChciVedetVic}
     Wait Until Location Is              ${MoreInfoUrl}
 
-
+  
 I go to introduction
-    [Documentation]
+    [Documentation]     Opens the introduction page and waits for the "CHCI VĚDĚT VÍC" button to be visible.
     Wait Until Page Contains Element    ${Uvod}
     Click Element    ${Uvod}
     Wait Until Element Is Visible    ${ChciVedetVic}
 
 
 I perform page transitions
+    [Documentation]     Clicks trough the tabs in Header panel.
     I navigate to homepage
     I open test design tool tab         ${OrthogonalCoveringArraysTab}
     I verify headline is present        ${SubpageHeadlineLevel}         ${OrthogonalCoveringArrays}
