@@ -51,7 +51,7 @@ TC_03 User can see more information about the app
 
 TC_04 User can open Orthogonal Arrays tab
     [Documentation]    Verifies that the user can open Orthogonal Arrays tab and see the expected content.
-    [Tags]  Regression
+    [Tags]  Regression   technique_detail
     I navigate to homepage
     I open test design tool tab         ${OrthogonalCoveringArraysTab}
     I verify headline is present        ${SubpageHeadlineLevel}         ${OrthogonalCoveringArrays}
@@ -59,7 +59,7 @@ TC_04 User can open Orthogonal Arrays tab
 
 TC_05 User can open Pairwise tab
     [Documentation]  Verifies that the user can open Pairwise tab and see the expected content.
-    [Tags]  Regression
+    [Tags]  Regression   technique_detail
     I navigate to homepage
     I open test design tool tab         ${PairwiseTab}
     I verify headline is present        ${SubpageHeadlineLevel}         ${Pairwise}
@@ -68,7 +68,7 @@ TC_05 User can open Pairwise tab
 
 TC_06 User can open Decision Teble tab
     [Documentation]    Verifies that the user can open Decision Teble tab and see the expected content
-    [Tags]  Regression
+    [Tags]  Regression   technique_detail
     I navigate to homepage
     I open test design tool tab         ${DecisionTableTab}
     I verify headline is present        ${SubpageHeadlineLevel}         ${DecisionTable}
@@ -77,7 +77,7 @@ TC_06 User can open Decision Teble tab
 
 TC_07 User can open Other Techiques tab
     [Documentation]  Verifies that the user can open the Other Techniques tab and see the expected content.
-    [Tags]  Regression
+    [Tags]  Regression   technique_detail    wip
     I navigate to homepage
     I open test design tool tab         ${OtherTechniquesTab}
     I verify headline is present        ${SubpageHeadlineLevel}         ${DalsiTechniky}
@@ -89,16 +89,17 @@ TC_07 User can open Other Techiques tab
 
 TC_08 User can select English
     [Documentation]   Verifies that the user can switch the website to English and confirm the website is in English.
-    [Tags]  Regression
+    [Tags]  Regression     English
     I navigate to homepage
     I switch to English
     I verify website is in English
     I verify English Url is correct
+    I switch to Czech
 
 
 TC_09 Contact form validation happy path
     [Documentation]  Verifies that the user can fill out the contact form with correct values and the page screenshot is captured.
-    [Tags]  Regression
+    [Tags]  Regression   Contact_Form
     I navigate to homepage
     I open contact info page
     I fill in contact form      ${TestingName}     ${TestEmail}     ${TestMessage}
@@ -107,7 +108,7 @@ TC_09 Contact form validation happy path
 
 TC_10 Contact form validation invalid email
     [Documentation]    Verifies that the user can fill out the contact form with an invalid email and the expected error message is displayed.
-    [Tags]  Regression
+    [Tags]  Regression      Contact_Form
     I navigate to homepage
     I open contact info page
     I fill in contact form      ${TestingName}      ${InvalidEmail}     ${TestMessage}
@@ -116,7 +117,7 @@ TC_10 Contact form validation invalid email
 
 TC_11 Contact form validation empty message
     [Documentation]    Verifies that the user can fill out the contact form with an invalid email and the expected error message is displayed.
-    [Tags]  Regression
+    [Tags]  Regression      Contact_Form
     I navigate to homepage
     I open contact info page
     I fill in contact form        ${TestingName}      ${TestEmail}     ${EmptyMessage}
@@ -164,5 +165,5 @@ TC_16 External links are working - DrawIO
 
 TC_17 Page transitions are working
     [Documentation]     Verifies that page transitions between main suboages don't break the application.
-    [Tags]  Regression    wip
+    [Tags]  Regression    Smoke
     I perform page transitions

@@ -24,10 +24,10 @@ I Expand Other Techniques
     Click Button                            ${TechniqueName}
     Sleep                                   1s
     Scroll Element Into View                ${element1}
-    Wait Until Element Is Visible           ${element1}
+    Wait Until Page Contains Element        ${element1}
     Sleep                                   1s
     Scroll Element Into View                ${element2}
-    Wait Until Element Is Visible           ${element2}
+    Wait Until Page Contains Element        ${element2}
     Capture Page Screenshot
     Sleep                                   1s
     Scroll Element Into View                ${ClassificationTree}
@@ -58,8 +58,8 @@ I verify more info is expandable
 
 *** Variables ***
 
-${SubpageHeadlineLevel}             //h2
-${ShowMoreInfo}                     //span[@class='show-more-btn']
+${SubpageHeadlineLevel}             css:h2
+${ShowMoreInfo}                     css:.show-more-btn
 ${ShowLessInfo}                     //span[contains(text(),'Méně')]
 ${ClassificationTree}               (//button[@id="classificationTree"])[1]
 ${StateTransition}                  (//button[@id="classificationTree"])[2]

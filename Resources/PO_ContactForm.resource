@@ -47,12 +47,12 @@ Verify error message is present
 
 *** Variables ***
 
-${ContactForm}                      //form[@id='contact-form']
-${EmailInput}                       //input[@id='email']
-${NameInput}                        //input[@id='user']
-${MessageInput}                     //textarea[@id='message']
-${SubmitMessageButton}              //form[@id='contact-form']/button[@id='submit']
-${EmailErrorMessage}                //div[@id='email-error']
+${ContactForm}                      id:contact-form
+${EmailInput}                       id:email
+${NameInput}                        id:user
+${MessageInput}                     id:message
+${SubmitMessageButton}              id:submit
+${EmailErrorMessage}                id:email-error
 ${EmptyMessage}
 ${TestingName}                      John Doe
 ${TestEmail}                        john@doe.com

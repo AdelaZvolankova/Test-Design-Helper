@@ -22,6 +22,8 @@ I switch to Czech
     [Documentation]    Switches the website to the Czech language by clicking the 'CS' link.
     Wait Until Page Contains Element    ${SwitchToCzech}
     Click Element                       ${SwitchToCzech}
+    Wait Until Element Is Visible       ${ChciVedetVic}
+
 
 
 I open test design tool tab
@@ -69,14 +71,14 @@ I perform page transitions
 
 *** Variables ***
 
-${SwitchToEnglish}                  //a[contains(text(),'EN')]
-${SwitchToCzech}                    //a[contains(text(),'CS')]
-${ContactUsButton}                  //div[contains(text(),'Kontaktujte nás')]
-${Uvod}                             //a[contains(text(),'Úvod')]
-${OrthogonalCoveringArraysTab}      //a[contains(text(),'Orthogonal & Covering Arrays')]
-${PairwiseTab}                      //a[contains(text(),'Pairwise')]
-${DecisionTableTab}                 //a[contains(text(),'Decision Table')]
-${OtherTechniquesTab}               //a[contains(text(),'Další techniky')]
+${SwitchToEnglish}                  css:a[href="/en"]
+${SwitchToCzech}                    css:a[href="/"]
+${ContactUsButton}                  CSS:.btn-radius-border
+${Uvod}                             css:a[href="/"]
+${OrthogonalCoveringArraysTab}      css:a[href="/orthogonal_arrays"]
+${PairwiseTab}                      css:a[href="/pairwise"]
+${DecisionTableTab}                 css:a[href="/decision_table"]
+${OtherTechniquesTab}               css:a[href="/other"]
 ${ChciVedetVic}                     //div[contains(text(),'CHCI VĚDĚT VÍC')]
 ${MoreInfoUrl}                      https://testdesign.tesena.com/#guide-index
 
