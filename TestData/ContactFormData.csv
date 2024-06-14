@@ -1,0 +1,5 @@
+﻿${Name};${Email};${Message}
+John Doe;john@doe.com;This is a robot test message.
+Bob Johnson;invalid_email;Hello from Bob.
+Jane Smith;jane@example.com;
+Jane Smith;;This is a test message which should not be sent.
