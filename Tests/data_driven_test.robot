@@ -5,8 +5,7 @@ Resource        ../Resources/PO_ExternalSites.resource
 Resource        ../Resources/PO_TechniquesSubpages.resource
 Resource        ../Resources/PO_HeaderObjects.resource
 Resource        ../Resources/PO_MoreInfo.resource
-Resource        ../Configs/config.resource
-#Library    DataDriver    File=../Resources/ContactFormData.txt    dialect=unix_dialect
+Library    DataDriver    File=../TestData/ContactFormData.csv     reader_class=csv_reader    encoding=utf_8
 
 
 
@@ -51,3 +50,8 @@ Contact form validation invalid email               John Doe        invalid@emai
 Contact form validation empty message               John Doe        john@example.com       ${EMPTY}
 Contact form validation empty email                 John Doe        ${EMPTY}               This email shouldnt be sent
 
+#*** Test Cases ***                                 ${Name}          ${Email}               ${Message}
+#Contact form validation happy path
+#Contact form validation invalid email
+#Contact form validation empty message
+#Contact form validation empty email

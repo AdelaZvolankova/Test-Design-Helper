@@ -135,7 +135,7 @@ TC_12 Social media links are working - FB
 
 TC_13 Social media links are working - YOUTUBE
     [Documentation]    Verifies that the user can open Tesena Yoututbe and see the expected content.
-    [Tags]  Regression
+    [Tags]  Regression    Youtube
     I navigate to homepage
     I verify social media link      ${YTlink}      ${YTurl}   ${CloseYTCookies}    ${Youtube}
     Capture Page Screenshot

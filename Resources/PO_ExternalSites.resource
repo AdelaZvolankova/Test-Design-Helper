@@ -79,7 +79,7 @@ ${DrawIOUrl}                        https://www.drawio.com/
 ${CreatlyUrl}                       https://creately.com/lp/state-machine-diagram-tool/
 ${Facebook}                         id:facebook
 ${Instagram}                        //span[contains(text(),'jsmetesena')]
-${Youtube}                          //yt-formatted-string[contains(text(),'Tesena')]
+${Youtube}                          //a[contains(text(),'tesena.com')]
 ${LinkedIn}                         //img[@alt='Tesena']
 ${CloseFBCookies}                   (//span[contains(text(),'Odmítnout volitelné soubory cookie')])[1]
 ${CloseYTCookies}                   (//span[contains(text(),'Odmítnout')])[1]/parent::button
