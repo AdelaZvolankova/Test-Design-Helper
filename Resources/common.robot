@@ -1,8 +1,5 @@
 *** Settings ***
-Library        OperatingSystem
-Library        Collections
 Library        SeleniumLibrary
-Library        String
 
 
 *** Keywords ***
