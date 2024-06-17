@@ -1,57 +1,42 @@
 *** Settings ***
-
 Library        OperatingSystem
 Library        Collections
 Library        SeleniumLibrary
 Library        String
-Library        RequestsLibrary
-Library        Browser
 Resource       ./PO_Homepage.resource
 Resource       ./PO_TechniquesSubpages.resource
+Resource       ./common.robot
 
 
 *** Keywords ***
 
-
 I switch to English
     [Documentation]    Switches the website to the English language by clicking the 'EN' link.
-    Wait Until Page Contains Element    ${SwitchToEnglish}
-    Click Element                       ${SwitchToEnglish}
+    Wait scroll click element           ${SwitchToEnglish}
 
 I switch to Czech
     [Documentation]    Switches the website to the Czech language by clicking the 'CS' link.
-    Wait Until Page Contains Element    ${SwitchToCzech}
-    Click Element                       ${SwitchToCzech}
+    Wait scroll click element           ${SwitchToCzech}
     Wait Until Element Is Visible       ${ChciVedetVic}
-
-
 
 I open test design tool tab
     [Documentation]    Opens the specified test design tool tab by clicking the respective tab.
     [Arguments]         ${TabName}
-    Wait Until Page Contains Element        ${TabName}
-    Click Link                              ${TabName}
-
+    Wait scroll click element            ${TabName}
 
 I open contact info page
     [Documentation]    Opens the contact information page by clicking the 'Kontaktujte nás'
-    Wait Until Element is visible           ${ContactUsButton}
-    Click Element                           ${ContactUsButton}
-
+    Wait scroll click element            ${ContactUsButton}
 
 I go to more information page
     [Documentation]    Opens the "More Information" page by clicking the "CHCI VĚDĚT VÍC" button.
-    Wait Until Page Contains Element    ${ChciVedetVic}
-    Click Element    ${ChciVedetVic}
+    Wait scroll click element           ${ChciVedetVic}
     Wait Until Location Is              ${MoreInfoUrl}
 
-  
 I go to introduction
     [Documentation]     Opens the introduction page and waits for the "CHCI VĚDĚT VÍC" button to be visible.
-    Wait Until Page Contains Element    ${Uvod}
-    Click Element    ${Uvod}
+    Wait scroll click element        ${Uvod}
     Wait Until Element Is Visible    ${ChciVedetVic}
-
 
 I perform page transitions
     [Documentation]     Clicks trough the tabs in Header panel.
@@ -67,8 +52,6 @@ I perform page transitions
     I go to introduction
 
 
-
-
 *** Variables ***
 
 ${SwitchToEnglish}                  css:a[href="/en"]
@@ -81,5 +64,3 @@ ${DecisionTableTab}                 css:a[href="/decision_table"]
 ${OtherTechniquesTab}               css:a[href="/other"]
 ${ChciVedetVic}                     //div[contains(text(),'CHCI VĚDĚT VÍC')]
 ${MoreInfoUrl}                      https://testdesign.tesena.com/#guide-index
-
-

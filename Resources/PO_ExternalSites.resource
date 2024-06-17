@@ -3,9 +3,8 @@ Library        OperatingSystem
 Library        Collections
 Library        SeleniumLibrary
 Library        String
-Library        RequestsLibrary
-Library        Browser
 Resource       ./PO_Homepage.resource
+Resource       ./common.robot
 
 
 *** Keywords ***
@@ -50,9 +49,7 @@ I accept cookies
 I verify social media link
     [Documentation]    Verifies that the specified social media link is present on the page and opens it.
     [Arguments]    ${SocialMediaLink}   ${SociaMediaUrl}    ${CloseButton}    ${SocialMediaElement}
-    Wait Until Page Contains Element    ${SocialMediaLink}
-    Scroll Element Into View            ${SocialMediaLink}
-    Click Element                       ${SocialMediaLink}
+    Wait scroll click element           ${SocialMediaLink}
     I close cookies question            ${CloseButton}
     Wait Until Location Is              ${SociaMediaUrl}
     Wait Until Page Contains Element    ${SocialMediaElement}
@@ -61,15 +58,12 @@ I verify social media link
 I close cookies question
     [Documentation]    Closes the cookies question by clicking the specified close button.
     [Arguments]         ${CloseButton}
-    Wait Until Page Contains Element    ${CloseButton}
-    Scroll Element Into View            ${CloseButton}
-    Click Element                       ${CloseButton}
+    Wait scroll click element           ${CloseButton}
 
 
 I close FB registration
     [Documentation]    Closes the Facebook registration by clicking the specified close button.
-    Wait Until Page Contains Element    ${CloseFBRegistration}
-    Click Element                       ${CloseFBRegistration}
+    Wait scroll click element           ${CloseFBRegistration}
 
 
 *** Variables ***

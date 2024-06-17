@@ -3,8 +3,7 @@ Library        OperatingSystem
 Library        Collections
 Library        SeleniumLibrary
 Library        String
-Library        RequestsLibrary
-Library        Browser
+Resource       ./common.robot
 
 
 *** Keywords ***

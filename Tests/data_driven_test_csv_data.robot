@@ -6,6 +6,11 @@ Resource   ../Resources/PO_TechniquesSubpages.resource
 Resource   ../Resources/PO_HeaderObjects.resource
 Resource   ../Resources/PO_MoreInfo.resource
 Resource   ../Configs/config.resource
+Library     DataDriver     File=${CURDIR}/../TestData/ContactFormData.csv
+...         reader_class=csv_reader
+...         encoding=utf_8
+...         delimiter=,
+...         lineterminator=\\n
 
 
 Test Setup        Start Test case
@@ -44,8 +49,7 @@ Finish Test case
     Close All Browsers
 
 
-*** Test Cases ***                                 ${Name}         ${Email}               ${Message}
-Contact form validation happy path                John Doe        john@example.com       This is a robot test message.
-Contact form validation invalid email             John Doe        invalid@email          Hello World
-Contact form validation empty message             John Doe        john@example.com       ${EMPTY}
-Contact form validation empty email               John Doe        ${EMPTY}               This email shouldnt be sent
+*** Test Cases ***                                       ${Name}        ${Email}        ${Message}
+
+Data driven test ${Name} and ${Email} and ${Message}     default        default          default
+

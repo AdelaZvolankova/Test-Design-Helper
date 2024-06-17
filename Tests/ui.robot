@@ -7,8 +7,9 @@ Resource      ../Resources/PO_TechniquesSubpages.resource
 Resource      ../Resources/PO_HeaderObjects.resource
 Resource      ../Resources/PO_MoreInfo.resource
 Resource      ../Configs/config.resource
+Resource      ../Resources/common.robot
 
-Test Setup        I open Browser
+Test Setup        common.I open Browser
 Test Teardown     Close All Browsers
 Test Timeout      120s
 
@@ -19,7 +20,6 @@ ${environment}  prod
 
 
 *** Test Cases ***
-
 
 TC_01 User can see Homepage
     [Documentation]   Verifies that the user can see the homepage and its main elements.
@@ -77,7 +77,7 @@ TC_06 User can open Decision Teble tab
 
 TC_07 User can open Other Techiques tab
     [Documentation]  Verifies that the user can open the Other Techniques tab and see the expected content.
-    [Tags]  Regression   technique_detail    wip
+    [Tags]  Regression   technique_detail
     I navigate to homepage
     I open test design tool tab         ${OtherTechniquesTab}
     I verify headline is present        ${SubpageHeadlineLevel}         ${DalsiTechniky}
@@ -126,7 +126,7 @@ TC_11 Contact form validation empty message
 
 TC_12 Social media links are working - FB
     [Documentation]   Verifies that the user can open Tesena Facebook and see the expected content.
-    [Tags]  Regression
+    [Tags]  Regression       Facebook       SocialMedia
     I navigate to homepage
     I verify social media link      ${FBlink}      ${FBurl}    ${CloseFBCookies}    ${Facebook}
     I close FB registration
@@ -135,7 +135,7 @@ TC_12 Social media links are working - FB
 
 TC_13 Social media links are working - YOUTUBE
     [Documentation]    Verifies that the user can open Tesena Yoututbe and see the expected content.
-    [Tags]  Regression    Youtube
+    [Tags]  Regression    Youtube       SocialMedia
     I navigate to homepage
     I verify social media link      ${YTlink}      ${YTurl}   ${CloseYTCookies}    ${Youtube}
     Capture Page Screenshot
@@ -143,7 +143,7 @@ TC_13 Social media links are working - YOUTUBE
 
 TC_14 Social media links are working - LinkedIn
     [Documentation]    Verifies that the user can open Tesena LinkedIn and see the expected content.
-    [Tags]  Regression
+    [Tags]  Regression    LinkedIn      SocialMedia
     I navigate to homepage
     I verify social media link      ${LinkedINlink}      ${LinkedINurl}   ${CloseLinkedINRegistration}    ${LinkedIn}
     Capture Page Screenshot
@@ -151,14 +151,14 @@ TC_14 Social media links are working - LinkedIn
 
 TC_15 External links are working - Testona
     [Documentation]    Verifies that the user can navigate to the external Testona homepage.
-    [Tags]  Regression
+    [Tags]  Regression    ExternalLinks
     I navigate to external homepage     ${TestonaUrl}
     Capture Page Screenshot
 
 
 TC_16 External links are working - DrawIO
     [Documentation]  Verifies that the user can navigate to the external DrawIO homepage.
-    [Tags]  Regression
+    [Tags]  Regression      ExternalLinks
     I navigate to external homepage     ${DrawIOUrl}
     Capture Page Screenshot
 
