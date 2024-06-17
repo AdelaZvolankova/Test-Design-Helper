@@ -53,7 +53,8 @@ robot --outputdir report --include "Smoke" tests/ui.robot
 
 ## Changing test environment
 
-There are currently 2 test environments: test and prod. Tests are running against prod by default. You can change it by running adding `--variable environment:test` to run command.
+There are currently 2 test environments: test and prod. Tests are running against prod by default. You can change it by running adding 
+`--variable environment:test` to run command.
 You can change the default option by updating the variable ${environment} in respective robot file (`ui.robot` or `data_driven_test_csv_data.robot` or `data_driven_test.robot`).
 
 
