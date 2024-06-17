@@ -3,9 +3,8 @@ Library        OperatingSystem
 Library        Collections
 Library        SeleniumLibrary
 Library        String
-Library        RequestsLibrary
-Library        Browser
 Resource       ./PO_ExternalSites.resource
+Resource       ./common.robot
 
 
 *** Keywords ***
@@ -19,17 +18,12 @@ I verify headline is present
 I Expand Other Techniques
     [Documentation]    Expands a single testing technique displaying additional information.
     [Arguments]       ${TechniqueName}      ${element1}      ${element2}
-    Wait Until Page Contains Element        ${TechniqueName}
-    Scroll Element Into View                ${TechniqueName}
-    Click Button                            ${TechniqueName}
-    Sleep                                   1s
+    Wait scroll click element               ${TechniqueName}
     Scroll Element Into View                ${element1}
-    Wait Until Element Is Visible           ${element1}
-    Sleep                                   1s
+    Wait Until Page Contains Element        ${element1}
     Scroll Element Into View                ${element2}
-    Wait Until Element Is Visible           ${element2}
+    Wait Until Page Contains Element        ${element2}
     Capture Page Screenshot
-    Sleep                                   1s
     Scroll Element Into View                ${ClassificationTree}
     Click Button                            ${TechniqueName}
 
@@ -51,15 +45,14 @@ I Expand Equivalence Partitioning
 
 I verify more info is expandable
     [Documentation]    Expands the more info section.
-    Wait Until Page Contains Element    ${ShowMoreInfo}
-    Click Element                       ${ShowMoreInfo}
+    Wait scroll click element       ${ShowMoreInfo}
     Capture Page Screenshot
 
 
 *** Variables ***
 
-${SubpageHeadlineLevel}             //h2
-${ShowMoreInfo}                     //span[@class='show-more-btn']
+${SubpageHeadlineLevel}             css:h2
+${ShowMoreInfo}                     css:.show-more-btn
 ${ShowLessInfo}                     //span[contains(text(),'Méně')]
 ${ClassificationTree}               (//button[@id="classificationTree"])[1]
 ${StateTransition}                  (//button[@id="classificationTree"])[2]

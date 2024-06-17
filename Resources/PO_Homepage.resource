@@ -3,8 +3,7 @@ Library        OperatingSystem
 Library        Collections
 Library        SeleniumLibrary
 Library        String
-Library        RequestsLibrary
-Library        Browser
+Resource       ./common.robot
 
 
 *** Keywords ***
@@ -52,20 +51,20 @@ I verify English Url is correct
 
 *** Variables ***
 
-${header}                           //*[@id="header-index"]
-${Tesena_logo}                      //*[@id="header-index"]/a[@href='https://www.tesena.com/']
-${footer}                           //div[@id='footer']
-${MainPageHeadlineLevel}            //h1
-${FBlink}                           //div[@id='footer']/a[@href='${FBurl}']
-${INSTAlink}                        //div[@id='footer']/a[@href='${INSTAurl}']
-${YTlink}                           //div[@id='footer']/a[@href='${YTurl}']
-${LinkedINlink}                     //div[@id='footer']/a[@href='${LinkedINurl}']
+${header}                           id:header-index
+${Tesena_logo}                      css:#header-index a
+${footer}                           css:#footer
+${MainPageHeadlineLevel}            css:h1
+${FBlink}                           css:.fa-facebook
+${INSTAlink}                        css:.fa-instagram
+${YTlink}                           css:.fa-youtube
+${LinkedINlink}                     css:.fa-linkedin
 ${FBurl}                            https://www.facebook.com/tesena.smart.testing/
 ${INSTAurl}                         https://www.instagram.com/jsmetesena/?utm_medium=copy_link
 ${YTurl}                            https://www.youtube.com/channel/UCXAYaVsc9AocWpVzHiGXtHQ
 ${LinkedINurl}                      https://www.linkedin.com/company/tesena/
 ${MainPageHeadline}                 Testing 360°
-${WelcomeInEnglish}                 //p[contains(text(),'Welcome to the world of effective Test Analysis!')]
+${WelcomeInEnglish}                 css:.index-div-left > p
 ${EnglishUrl}                       https://testdesign.tesena.com/en
 ${ContactHeadline}                  Spojte se s námi
 ${OrthogonalCoveringArrays}         Orthogonal Arrays

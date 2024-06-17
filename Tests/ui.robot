@@ -7,8 +7,9 @@ Resource      ../Resources/PO_TechniquesSubpages.resource
 Resource      ../Resources/PO_HeaderObjects.resource
 Resource      ../Resources/PO_MoreInfo.resource
 Resource      ../Configs/config.resource
+Resource      ../Resources/common.robot
 
-Test Setup        I open Browser
+Test Setup        common.I open Browser
 Test Teardown     Close All Browsers
 Test Timeout      120s
 
@@ -19,7 +20,6 @@ ${environment}  prod
 
 
 *** Test Cases ***
-
 
 TC_01 User can see Homepage
     [Documentation]   Verifies that the user can see the homepage and its main elements.
@@ -51,7 +51,7 @@ TC_03 User can see more information about the app
 
 TC_04 User can open Orthogonal Arrays tab
     [Documentation]    Verifies that the user can open Orthogonal Arrays tab and see the expected content.
-    [Tags]  Regression
+    [Tags]  Regression   technique_detail
     I navigate to homepage
     I open test design tool tab         ${OrthogonalCoveringArraysTab}
     I verify headline is present        ${SubpageHeadlineLevel}         ${OrthogonalCoveringArrays}
@@ -59,7 +59,7 @@ TC_04 User can open Orthogonal Arrays tab
 
 TC_05 User can open Pairwise tab
     [Documentation]  Verifies that the user can open Pairwise tab and see the expected content.
-    [Tags]  Regression
+    [Tags]  Regression   technique_detail
     I navigate to homepage
     I open test design tool tab         ${PairwiseTab}
     I verify headline is present        ${SubpageHeadlineLevel}         ${Pairwise}
@@ -68,7 +68,7 @@ TC_05 User can open Pairwise tab
 
 TC_06 User can open Decision Teble tab
     [Documentation]    Verifies that the user can open Decision Teble tab and see the expected content
-    [Tags]  Regression
+    [Tags]  Regression   technique_detail
     I navigate to homepage
     I open test design tool tab         ${DecisionTableTab}
     I verify headline is present        ${SubpageHeadlineLevel}         ${DecisionTable}
@@ -77,7 +77,7 @@ TC_06 User can open Decision Teble tab
 
 TC_07 User can open Other Techiques tab
     [Documentation]  Verifies that the user can open the Other Techniques tab and see the expected content.
-    [Tags]  Regression
+    [Tags]  Regression   technique_detail
     I navigate to homepage
     I open test design tool tab         ${OtherTechniquesTab}
     I verify headline is present        ${SubpageHeadlineLevel}         ${DalsiTechniky}
@@ -89,16 +89,17 @@ TC_07 User can open Other Techiques tab
 
 TC_08 User can select English
     [Documentation]   Verifies that the user can switch the website to English and confirm the website is in English.
-    [Tags]  Regression
+    [Tags]  Regression     English
     I navigate to homepage
     I switch to English
     I verify website is in English
     I verify English Url is correct
+    I switch to Czech
 
 
 TC_09 Contact form validation happy path
     [Documentation]  Verifies that the user can fill out the contact form with correct values and the page screenshot is captured.
-    [Tags]  Regression
+    [Tags]  Regression   Contact_Form
     I navigate to homepage
     I open contact info page
     I fill in contact form      ${TestingName}     ${TestEmail}     ${TestMessage}
@@ -107,7 +108,7 @@ TC_09 Contact form validation happy path
 
 TC_10 Contact form validation invalid email
     [Documentation]    Verifies that the user can fill out the contact form with an invalid email and the expected error message is displayed.
-    [Tags]  Regression
+    [Tags]  Regression      Contact_Form
     I navigate to homepage
     I open contact info page
     I fill in contact form      ${TestingName}      ${InvalidEmail}     ${TestMessage}
@@ -116,7 +117,7 @@ TC_10 Contact form validation invalid email
 
 TC_11 Contact form validation empty message
     [Documentation]    Verifies that the user can fill out the contact form with an invalid email and the expected error message is displayed.
-    [Tags]  Regression
+    [Tags]  Regression      Contact_Form
     I navigate to homepage
     I open contact info page
     I fill in contact form        ${TestingName}      ${TestEmail}     ${EmptyMessage}
@@ -125,7 +126,7 @@ TC_11 Contact form validation empty message
 
 TC_12 Social media links are working - FB
     [Documentation]   Verifies that the user can open Tesena Facebook and see the expected content.
-    [Tags]  Regression
+    [Tags]  Regression       Facebook       SocialMedia
     I navigate to homepage
     I verify social media link      ${FBlink}      ${FBurl}    ${CloseFBCookies}    ${Facebook}
     I close FB registration
@@ -134,7 +135,7 @@ TC_12 Social media links are working - FB
 
 TC_13 Social media links are working - YOUTUBE
     [Documentation]    Verifies that the user can open Tesena Yoututbe and see the expected content.
-    [Tags]  Regression
+    [Tags]  Regression    Youtube       SocialMedia
     I navigate to homepage
     I verify social media link      ${YTlink}      ${YTurl}   ${CloseYTCookies}    ${Youtube}
     Capture Page Screenshot
@@ -142,7 +143,7 @@ TC_13 Social media links are working - YOUTUBE
 
 TC_14 Social media links are working - LinkedIn
     [Documentation]    Verifies that the user can open Tesena LinkedIn and see the expected content.
-    [Tags]  Regression
+    [Tags]  Regression    LinkedIn      SocialMedia
     I navigate to homepage
     I verify social media link      ${LinkedINlink}      ${LinkedINurl}   ${CloseLinkedINRegistration}    ${LinkedIn}
     Capture Page Screenshot
@@ -150,19 +151,19 @@ TC_14 Social media links are working - LinkedIn
 
 TC_15 External links are working - Testona
     [Documentation]    Verifies that the user can navigate to the external Testona homepage.
-    [Tags]  Regression
+    [Tags]  Regression    ExternalLinks
     I navigate to external homepage     ${TestonaUrl}
     Capture Page Screenshot
 
 
 TC_16 External links are working - DrawIO
     [Documentation]  Verifies that the user can navigate to the external DrawIO homepage.
-    [Tags]  Regression
+    [Tags]  Regression      ExternalLinks
     I navigate to external homepage     ${DrawIOUrl}
     Capture Page Screenshot
 
 
 TC_17 Page transitions are working
     [Documentation]     Verifies that page transitions between main suboages don't break the application.
-    [Tags]  Regression    wip
+    [Tags]  Regression    Smoke
     I perform page transitions
