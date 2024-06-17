@@ -11,10 +11,11 @@ Before running the tests, ensure that you have the following software installed:
 - Robot Framework SeleniumLibrary
 - Robot Framework DataDriver
 - Google Chrome (for running tests in a web browser)
+- Chrome driver
 
 ### Installing Python
 
-If you don't have Python installed, you can download it from the official Python website: https://www.python.org/downloads/
+If you don't have Python installed, you can download it from the official Python website: https://www.python.org/downloads
 
 ### Installing chrome driver
 
@@ -50,11 +51,14 @@ This command will run all tests in the `ui.robot` file and generate a report in 
 robot --outputdir report --test "TC_01 User can see Homepage" tests/ui.robot 
 robot --outputdir report --include "Smoke" tests/ui.robot
 
+## Changing test environment
+
+There are currently 2 test environments: test and prod. You can change them by updating the variable ${environment} in respective robot file (`ui.robot` or `data_driven_test_csv_data.robot` or `data_driven_test.robot`).
+
 
 ## Project Structure
 
 The project has the following structure:
-
 - `Configs/`: Contains configuration files for the test suite.
 - `Resources/`: Contains resource files with keywords and variables used in the tests.
 - `TestData/`: Contains data files used for data-driven testing.
