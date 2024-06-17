@@ -30,9 +30,9 @@ Set Up the ChromeDriver Executable:
 
 You can install Robot Framework and the required libraries using pip, the Python package installer. Open your terminal or command prompt and run the following commands:
 
-pip install robotframework 
-pip install robotframework-seleniumlibrary 
-pip install robotframework-datadriver
+- pip install robotframework 
+- pip install robotframework-seleniumlibrary 
+- pip install robotframework-datadriver
 
 ## Running Tests
 
