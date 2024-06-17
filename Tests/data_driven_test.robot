@@ -44,7 +44,7 @@ Finish Test case
     Close All Browsers
 
 
-*** Test Cases ***                                 ${Name}         ${Email}               ${Message}
+*** Test Cases ***                                ${Name}         ${Email}               ${Message}
 Contact form validation happy path                John Doe        john@example.com       This is a robot test message.
 Contact form validation invalid email             John Doe        invalid@email          Hello World
 Contact form validation empty message             John Doe        john@example.com       ${EMPTY}

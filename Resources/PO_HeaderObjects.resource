@@ -1,8 +1,4 @@
 *** Settings ***
-Library        OperatingSystem
-Library        Collections
-Library        SeleniumLibrary
-Library        String
 Resource       ./PO_Homepage.resource
 Resource       ./PO_TechniquesSubpages.resource
 Resource       ./common.robot

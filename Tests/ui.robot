@@ -2,12 +2,10 @@
 
 Resource      ../Resources/PO_ContactForm.resource
 Resource      ../Resources/PO_ExternalSites.resource
-Resource      ../Resources/PO_Homepage.resource
 Resource      ../Resources/PO_TechniquesSubpages.resource
 Resource      ../Resources/PO_HeaderObjects.resource
 Resource      ../Resources/PO_MoreInfo.resource
 Resource      ../Configs/config.resource
-Resource      ../Resources/common.robot
 
 Test Setup        common.I open Browser
 Test Teardown     Close All Browsers

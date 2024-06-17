@@ -50,6 +50,5 @@ Finish Test case
 
 
 *** Test Cases ***                                       ${Name}        ${Email}        ${Message}
-
-Data driven test ${Name} and ${Email} and ${Message}     default        default          default
+Data driven test ${Name} and ${Email} and ${Message}     default        default         default
 
